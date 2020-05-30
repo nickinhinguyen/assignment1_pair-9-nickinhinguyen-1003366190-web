@@ -11,7 +11,7 @@ class App extends React.Component {
           itemlist:[{item:"/images/item1.jpg",price:120.98, count:0}, {item:"/images/item2.jpg",price:130.88, count:0}],
           currentprice: 0,
           error: false,
-          errormessage: null,
+          errormessage: null,  
           addtax: true,
         }
     }
