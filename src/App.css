@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: #282c34;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+
+.App-header-left {
+  background-color: #282c34;
+  display: inline-block;
+  margin-bottom: 35px;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  color: #c6c7c9;
+}
+.App-header-right {
+  background-color: #282c34;
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  color: #c6c7c9;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+input[type=checkbox] {
+  transform: scale(2);
+}
+
+@media only screen and (max-width: 1000px) {
+  .App-header-left {
+    background-color: #282c34;
+    display: inline-block;
+    margin-bottom: 15px;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    text-align: left;
+    font-size: calc(10px + 2vmin);
+    color: #c6c7c9;
+  }
+  .App-header-right {
+    background-color: #282c34;
+    display: inline-block;
+    margin-bottom: 15px;
+    top: 0px;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    text-align: right;
+    font-size: calc(10px + 2vmin);
+    color: #c6c7c9;
+  }
+  input[type=checkbox] {
+    transform: scale(1.4);
+  }
+}
