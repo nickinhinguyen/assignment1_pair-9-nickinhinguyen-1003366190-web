@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## CI/CD:
+The CI, CD is implemented with github actions. Associated time /.github/workflows/OnPush.yml <br/>
+Once a push to any branch (development or master) a simple check is made to make sure there is no program crashing error are made <br/>
+The workflow define and set up the environment, and runs the test by command "npm run test_render", "npm run test_api" to test if both frontend and backend are working. <br/>
+Automated Deployment: The app is deployed on heroku, once a push request is made to master, heroku will wait for the github action workflow to complete without error, the enable an automated deployment. The app will be rebuilt and redeployed with code in "master" branch. Push to development will not trigger autodeploy. Please Note that the test is run on push to any branches including "master", which means whenever it's deployed to Heroku, it must passes all the tests in the workflow.
+
+
+## Testing Instructions:
+To see the deployed Webapp. You can go to https://checkoutcalculator.herokuapp.com/ <br/>
+To see the mobileapp, you can go to github repo https://github.com/csc301-summer-2020/assignment1_pair-9-nickinhinguyen-1003366190-mobile.git <br/>
+To set up a testing environment, you can clone this Repo and in the project directory by run the following command:<br/> 
+"npm run build"<br/>
+then run <br/>
+"npm start"<br/>
+<br/>
+You should be able to see the app by accessing http://localhost:3000 in your browser.<br/>
+The app allows you to select pre-defined items of different prices, choose addtax/not addtax, choose the discount in % to apply, and display the final price <br/> 
+Details of available scripts see below. there are 2 additional testing script runs very simple test<br/> 
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
+Builds the frontend client for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
 The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm start`
 
-### `npm run eject`
+Runs the server, make sure a build package is available.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `npm run test_render`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+which runs a test on frontend rendered dom element. Associated with the testing script in src/App.test.js. <br/> 
+It simply renders the page and checks if string "Price Total" is contained and rendered to make sure the page is rendering. <br/> according to requirement of the assignment, only one single simple but scalable test is required. This test can be extended to test multiple rendered DOM item. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `npm run test_render`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+which runs a test on backend API. Associated with the testing script in test/task.js. <br/>
+It uses Mocha and Chai packages to send request to the server and check if the API /api/calculate computes the result correctly <br/>
+This file can be easily extended to check other API requests such as get, delete, put, etc.<br/>
+In this assignment the backend only does a simple function: given price, taxrate, and discount, computes and return the final price. <br/>
+according to requirement of the assignment, only one single simple but scalable test is required. This test can be extended to test multiple rendered API requests. 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
