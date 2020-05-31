@@ -8,7 +8,14 @@ class App extends React.Component {
         super(props);
         this.handleCountUpdate.bind(this);
         this.state = {
-          itemlist:[{item:"/images/item1.jpg",price:120.98, count:0}, {item:"/images/item2.jpg",price:130.88, count:0}],
+          itemlist:[
+            {item:"/images/item1.jpg",price:20.98, count:0}, 
+            {item:"/images/item2.jpg",price:30.88, count:0},
+            {item:"/images/item3.jpg",price:30.88, count:0},
+            {item:"/images/item4.jpg",price:30.88, count:0},
+            {item:"/images/item5.jpg",price:30.88, count:0},
+            {item:"/images/item6.jpg",price:30.88, count:0},
+          ],
           currentprice: 0,
           error: false,
           errormessage: null,  
