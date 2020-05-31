@@ -2,7 +2,8 @@
 The CI, CD is implemented with github actions. Associated time /.github/workflows/OnPush.yml <br/>
 Once a push to any branch (development or master) a simple check is made to make sure there is no program crashing error are made <br/>
 The workflow define and set up the environment, and runs the test by command "npm run test_render", "npm run test_api" to test if both frontend and backend are working. <br/>
-Automated Deployment: The app is deployed on heroku, once a push request is made to master, heroku will wait for the github action workflow to complete without error, the enable an automated deployment. The app will be rebuilt and redeployed with code in "master" branch. Push to development will not trigger autodeploy. Please Note that the test is run on push to any branches including "master", which means whenever it's deployed to Heroku, it must passes all the tests in the workflow.
+Automated Deployment: The app is deployed on heroku, once a push request is made to master, heroku will wait for the github action workflow to complete without error, the enable an automated deployment. The app will be rebuilt and redeployed with the updated code in "master" branch. Push to development will not trigger autodeploy. Fail the workflow (which is the test in github actions) will not trigger autodeploy<br/> 
+Please Note that the test is run on push to any branches including "master", which means whenever it's deployed to Heroku, it must passes all the tests in the workflow.
 
 
 ## Testing Instructions:
