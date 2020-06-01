@@ -1,3 +1,6 @@
+## Report:
+Available in Mobile App repository
+
 ## CI/CD:
 The CI, CD is implemented with github actions. Associated time /.github/workflows/OnPush.yml <br/>
 Once a push to any branch (development or master) a simple check is made to make sure there is no program crashing error are made <br/>
